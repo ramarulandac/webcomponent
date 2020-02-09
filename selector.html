@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Selector</title>
+
+    <style>
+        .titulo {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mis pelis</h1>
+
+
+    <fieldset id="selector">
+        <legend>
+            Choose template
+        </legend>
+        <label for="">
+            <input type="radio" name="template" 
+            value="uno" checked>
+            Template 1: title | Anyio
+        </label> <br>
+
+        <label for="">
+            <input type="radio" name="template" 
+            value="dos" checked>
+            Template 2: (Anyio) Title
+        </label>
+    </fieldset>
+
+    <template id="uno">
+        <li>
+            <span class="titulo"></span> |
+            <span class="anyo"></span>
+        </li>
+    </template>
+    <template id="dos">
+        <li>
+            (<span class="anyo"></span>)
+            <span class="titulo"></span>
+        </li>
+    </template>
+
+    <ul id="pelis">
+        Cargando pelis...
+    </ul>
+    <script src="selector.js"> </script>
+</body>
+</html>

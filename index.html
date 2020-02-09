@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>plantillas HTML</title> 
+</head>
+
+<body>
+    <h1>Templates</h1>
+    <template>
+        <h1>Hi templates</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id laborum mollitia, sunt omnis ut qui impedit blanditiis voluptatem unde voluptates maiores fuga odio iste cumque ipsa dignissimos quisquam quas maxime!</p>
+    </template>
+    <script>
+        const template = document.querySelector('template');
+        const node = document.importNode(template.content,true);
+        document.body.appendChild(node);
+        </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pop Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p>Tap the bottom to open the dialog box!</p>
+    <template id="templ-poppup">
+        <style>
+            button {        
+                all:unset;
+                position: absolute;            
+                top:1rem;
+                right: 1rem;
+                cursor:pointer;
+                font-size: 1.5rem;
+            }
+
+            .wrapper {                    
+                opacity:0;
+                transition: visibility 0s; opacity: .25s ease-in;
+            }
+
+            .wrapper:not(.open){ /*cuando rapper no tenga la clase open*/
+                visibility: hidden;
+            }
+
+            .wrapper.open {
+                visibility: visible;
+                opacity: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                position: fixed;
+                top:0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
+            .overlay {
+                background-color: rgba(0,0,0,0.7);
+                position: fixed;
+                top:0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
+            .dialog {
+                background-color: white;
+                position: fixed;
+                max-width: 600px;
+                padding: 1rem;
+                border-radius: 3px;
+
+            }
+
+        </style>        
+
+    <div class="wrapper">
+        <div class="overlay"></div>
+        <div class="dialog">
+            <button class="cerrar">&times;</button> <!-- &times cruz de multiplicar-->
+            <h1 class="titulo">Title</h1>
+            <div id="contenido" class="contenido">
+                contain of my dialog box!
+            </div>
+        </div>
+    </div>
+   
+    </template>
+    
+    <button id="open-popup">Click to Open the Pop up..</button>
+    <my-dialogbox>
+       
+    </my-dialogbox>
+    <script src="./popup.js"></script>
+    
+</body>
+</html>
